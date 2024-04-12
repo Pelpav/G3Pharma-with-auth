@@ -25,21 +25,21 @@
         </div>
         <ul class="nav-links">
             <li>
-                <a href="#" class="active">
+                <a href="/auth/home" class="active">
                     <i class='bx bx-grid-alt'></i>
                     <span class="links_name">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/employes">
                     <i class='bx bx-box'></i>
-                    <span class="links_name">Product</span>
+                    <span class="links_name">Employes</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/medicaments">
                     <i class='bx bx-list-ul'></i>
-                    <span class="links_name">Order list</span>
+                    <span class="links_name">Médicaments</span>
                 </a>
             </li>
             <li>
@@ -85,10 +85,20 @@
                 </a>
             </li>
             <li class="log_out">
-                <a href="#">
+                {{-- <a href="#">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a> --}}
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                     <i class='bx bx-log-out'></i>
                     <span class="links_name">Log out</span>
                 </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
             </li>
         </ul>
     </div>
@@ -100,8 +110,8 @@
             </div>
 
             <div class="profile-details">
-                <img src="images/profile.jpg" alt="">
-                <span class="admin_name"></span>
+                {{-- <img src="images/profile.jpg" alt=""> --}}
+                <span class="admin_name"> {{ Auth::user()->name }}</span>
                 <i class='bx bx-chevron-down'></i>
             </div>
         </nav>
