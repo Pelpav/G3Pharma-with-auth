@@ -15,21 +15,27 @@
 
     <!-- Inclure le script JavaScript de DataTables -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="sidebar">
-        <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">G3Pharma</span>
-        </div>
+        <a href="/">
+            <div class="logo-details">
+
+                <i class='bx bxl-c-plus-plus'></i>
+                <span class="logo_name">G3Pharma</span>
+
+            </div>
+        </a>
         <ul class="nav-links">
-            <li>
-                <a href="/auth/home" class="active">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-            </li>
             <li>
                 <a href="/employes">
                     <i class='bx bx-box'></i>
@@ -42,48 +48,7 @@
                     <span class="links_name">Médicaments</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Analytics</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-coin-stack'></i>
-                    <span class="links_name">Stock</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-book-alt'></i>
-                    <span class="links_name">Total order</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Team</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-message'></i>
-                    <span class="links_name">Messages</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-heart'></i>
-                    <span class="links_name">Favrorites</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-            </li>
+
             <li class="log_out">
                 {{-- <a href="#">
                     <i class='bx bx-log-out'></i>
@@ -112,57 +77,10 @@
             <div class="profile-details">
                 {{-- <img src="images/profile.jpg" alt=""> --}}
                 <span class="admin_name"> {{ Auth::user()->name }}</span>
-                <i class='bx bx-chevron-down'></i>
             </div>
         </nav>
 
         <div class="home-content">
-            <div class="overview-boxes">
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Order</div>
-                        <div class="number">40,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart-alt cart'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Sales</div>
-                        <div class="number">38,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-add cart two'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Profit</div>
-                        <div class="number">$12,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart cart three'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Return</div>
-                        <div class="number">11,086</div>
-                        <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Down From Today</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-download cart four'></i>
-                </div>
-            </div>
             @yield('contenu')
         </div>
     </section>
@@ -680,7 +598,55 @@
                 width: calc(100% - 60px);
             }
         }
-    </style>
+
+        /* Styles pour le formulaire */
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </>
 
 </body>
 
