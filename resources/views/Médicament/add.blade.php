@@ -17,6 +17,11 @@
         <label for="stock">Stock:</label>
         <input type="text" id="stock" name="stock"><br><br>
 
+        <label for="maker">Fabricant :</label>
+        <input type="text" id="maker" name="maker"><br><br>
+
         <button type="submit">Ajouter Medicaments</button>
     </form>
+
+
 @endsection

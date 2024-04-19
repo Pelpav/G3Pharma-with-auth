@@ -93,3 +93,10 @@ Route::get('/formMedicament', [MedicamentController::class, 'showCreateForm'])->
 
 // Liste medicaments
 Route::get('/medicaments', [MedicamentController::class, 'getAllMedicament'])->name('medicament.list');
+
+
+// Ajouter du stock à un médicament
+Route::get('/addstock/{id}', [MedicamentController::class, 'addStock'])->name('addStock');
+
+// Retirer du stock à un médicament
+Route::get('/removestock/{id}', [MedicamentController::class, 'removeStock'])->name('removeStock');
