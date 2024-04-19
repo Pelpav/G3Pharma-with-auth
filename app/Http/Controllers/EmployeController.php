@@ -31,7 +31,7 @@ class EmployeController extends Controller
         $user = new User();
         $user->name = $request->input('first_name') . ' ' . $request->input('last_name');
         $email = strtolower(str_replace(' ', '', $request->input('first_name'))) . '@gmail.com';
-        $user->email =$email; // Assurez-vous que vous avez un champ email dans votre formulaire
+        $user->email = $email; // Assurez-vous que vous avez un champ email dans votre formulaire
         $user->password = bcrypt($request->input('password')); // Assurez-vous que vous avez un champ password dans votre formulaire
         $user->is_admin = false; // Vous pouvez définir ceci en fonction de vos besoins, par exemple, si l'employé est un administrateur ou non
         $user->save();
@@ -69,6 +69,13 @@ class EmployeController extends Controller
     public function delEmploye($id)
     {
         $employe = Employe::findOrFail($id);
+        // Trouver l'utilisateur associé à l'employé
+        $user = User::where('email', '=', strtolower(str_replace(' ', '', $employe->first_name)) . '@gmail.com')->first();
+
+        // Si l'utilisateur existe, le supprimer
+        if ($user) {
+            $user->delete();
+        }
         $employe->delete();
         $employes = Employe::all();
         return view('Employe\liste')->with('employes', $employes);
