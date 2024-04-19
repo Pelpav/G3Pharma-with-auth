@@ -15,6 +15,14 @@
 
     <!-- Inclure le script JavaScript de DataTables -->
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -117,52 +125,6 @@
         </nav>
 
         <div class="home-content">
-            <div class="overview-boxes">
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Order</div>
-                        <div class="number">40,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart-alt cart'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Sales</div>
-                        <div class="number">38,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-add cart two'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Profit</div>
-                        <div class="number">$12,876</div>
-                        <div class="indicator">
-                            <i class='bx bx-up-arrow-alt'></i>
-                            <span class="text">Up from yesterday</span>
-                        </div>
-                    </div>
-                    <i class='bx bx-cart cart three'></i>
-                </div>
-                <div class="box">
-                    <div class="right-side">
-                        <div class="box-topic">Total Return</div>
-                        <div class="number">11,086</div>
-                        <div class="indicator">
-                            <i class='bx bx-down-arrow-alt down'></i>
-                            <span class="text">Down From Today</span>
-                        </div>
-                    </div>
-                    <i class='bx bxs-cart-download cart four'></i>
-                </div>
-            </div>
             @yield('contenu')
         </div>
     </section>
