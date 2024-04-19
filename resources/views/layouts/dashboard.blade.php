@@ -27,12 +27,14 @@
 
 <body>
     <div class="sidebar">
-        <div class="logo-details">
-            <a href="/">
+        <a href="/">
+            <div class="logo-details">
+
                 <i class='bx bxl-c-plus-plus'></i>
                 <span class="logo_name">G3Pharma</span>
-            </a>
-        </div>
+
+            </div>
+        </a>
         <ul class="nav-links">
             <li>
                 <a href="/employes">
@@ -46,48 +48,7 @@
                     <span class="links_name">Médicaments</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-pie-chart-alt-2'></i>
-                    <span class="links_name">Analytics</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-coin-stack'></i>
-                    <span class="links_name">Stock</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-book-alt'></i>
-                    <span class="links_name">Total order</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user'></i>
-                    <span class="links_name">Team</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-message'></i>
-                    <span class="links_name">Messages</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-heart'></i>
-                    <span class="links_name">Favrorites</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-cog'></i>
-                    <span class="links_name">Setting</span>
-                </a>
-            </li>
+
             <li class="log_out">
                 {{-- <a href="#">
                     <i class='bx bx-log-out'></i>
@@ -116,7 +77,6 @@
             <div class="profile-details">
                 {{-- <img src="images/profile.jpg" alt=""> --}}
                 <span class="admin_name"> {{ Auth::user()->name }}</span>
-                <i class='bx bx-chevron-down'></i>
             </div>
         </nav>
 
