@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Employe;
 use App\Models\User;
 use Illuminate\Support\Str; // Importez la classe Str pour utiliser la méthode `slug()`
+use Illuminate\Support\Facades\Redirect;
 
 
 class EmployeController extends Controller
@@ -78,7 +79,7 @@ class EmployeController extends Controller
         }
         $employe->delete();
         $employes = Employe::all();
-        return view('Employe\liste')->with('employes', $employes);
+        return Redirect::route('employe.list');
     }
 
 
