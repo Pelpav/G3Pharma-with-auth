@@ -28,16 +28,12 @@
 <body>
     <div class="sidebar">
         <div class="logo-details">
-            <i class='bx bxl-c-plus-plus'></i>
-            <span class="logo_name">G3Pharma</span>
+            <a href="/">
+                <i class='bx bxl-c-plus-plus'></i>
+                <span class="logo_name">G3Pharma</span>
+            </a>
         </div>
         <ul class="nav-links">
-            <li>
-                <a href="/auth/home" class="active">
-                    <i class='bx bx-grid-alt'></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-            </li>
             <li>
                 <a href="/employes">
                     <i class='bx bx-box'></i>

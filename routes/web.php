@@ -88,7 +88,7 @@ Route::get('/employes', [EmployeController::class, 'getAllEmploye'])->name('empl
 
 
 // Afficher le forrm médicaments
-Route::get('/formMedicament', [MedicamentController::class, 'showCreateForm'])->name('formEmploye');
+Route::get('/formMedicament', [MedicamentController::class, 'showCreateForm'])->name('formMedicament');
 
 
 // Liste medicaments
