@@ -100,3 +100,5 @@ Route::get('/addstock/{id}', [MedicamentController::class, 'addStock'])->name('a
 
 // Retirer du stock à un médicament
 Route::get('/removestock/{id}', [MedicamentController::class, 'removeStock'])->name('removeStock');
+
+Route::get('/editemploye/{id}', [EmployeController::class, 'editEmploye'])->name('editemploye');

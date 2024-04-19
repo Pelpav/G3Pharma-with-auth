@@ -66,6 +66,14 @@ class EmployeController extends Controller
         return response()->json($employe);
     }
 
+    public function editEmploye($id)
+{
+    $employe = Employe::findOrFail($id);
+    return view('employe.modif', compact('employe'));
+}
+
+
+
     // DELETE
     public function delEmploye($id)
     {
