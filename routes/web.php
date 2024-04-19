@@ -40,9 +40,9 @@ Route::post('/medicament/create', [MedicamentController::class, 'createMedicamen
 
 // BY ID
 
-Route::get('/getemploye/{id}', [EmployeController::class, 'getEmployeById(id)'])->name('getemployebyid');
+Route::get('/getemploye/{id}', [EmployeController::class, 'getEmployeById'])->name('getemployebyid');
 
-Route::get('/getmedicament/{id}', [MedicamentController::class, 'getMedicamentById(id)'])->name('getmedicamentbyid');
+Route::get('/getmedicament/{id}', [MedicamentController::class, 'getMedicamentById'])->name('getmedicamentbyid');
 
 // GET ALL
 
@@ -70,11 +70,12 @@ Route::post('/updatemedicament/{id}', [MedicamentController::class, 'updateMedic
 
 // DELETE
 
-Route::get('/delemployee/{id}', [EmployeController::class, 'delEmploye(id)'])->name('delemployee');
+Route::get('/delemployee/{id}', [EmployeController::class, 'delEmploye'])->name('delemployee');
 
-Route::get('/delmedicament/{id}', [MedicamentController::class, 'delMedicament(id)'])->name('delmedicament');
+Route::get('/delmedicament/{id}', [MedicamentController::class, 'delMedicament'])->name('delmedicament');
 
 // FIN DELETE
+
 
 
 

@@ -151,20 +151,15 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
-    <h1>Liste des Employés</h1>
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col-sm-8">
-                            <h2>Employe <b>Details</b></h2>
                         </div>
                         <div class="col-sm-4">
-                            <div class="search-box">
-                                <i class="material-icons">&#xE8B6;</i>
-                                <input type="text" class="form-control" placeholder="Search&hellip;">
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -195,15 +190,16 @@
                                 <td>{{ $employe->adresse }}</td>
                                 <td>{{ $employe->status }}</td>
                                 <td>
-                                    <a href="#" class="view" title="View" data-toggle="tooltip"><i
-                                            class="material-icons">&#xE417;</i></a>
-                                    <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i
-                                            class="material-icons">&#xE254;</i></a>
-                                    <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i
-                                            class="material-icons">&#xE872;</i></a>
+                                    <a href="{{ route('getemployebyid', ['id' => $employe->id]) }}" class="view"
+                                        title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+                                    <a href="{{ route('updateemploye', ['id' => $employe->id]) }}" class="edit"
+                                        title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                                    <a href="{{ route('delemployee', ['id' => $employe->id]) }}" class="delete"
+                                        title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
                                 </td>
                             </tr>
                         @endforeach
+
                     </tbody>
                 </table>
             </div>

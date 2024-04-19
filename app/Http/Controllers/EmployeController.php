@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Employe;
+use App\Models\User;
+use Illuminate\Support\Str; // Importez la classe Str pour utiliser la méthode `slug()`
 
 
 class EmployeController extends Controller
@@ -24,6 +26,15 @@ class EmployeController extends Controller
         $employe->status = $request->input('status');
 
         $employe->save();
+
+        // Créer un nouvel utilisateur avec les mêmes informations que l'employé
+        $user = new User();
+        $user->name = $request->input('first_name') . ' ' . $request->input('last_name');
+        $email = $request->input('first_name'). '@gmail.com';
+        $user->email =$email; // Assurez-vous que vous avez un champ email dans votre formulaire
+        $user->password = bcrypt($request->input('password')); // Assurez-vous que vous avez un champ password dans votre formulaire
+        $user->is_admin = false; // Vous pouvez définir ceci en fonction de vos besoins, par exemple, si l'employé est un administrateur ou non
+        $user->save();
 
         // Rediriger vers la vue contenant tous les employés
         return redirect()->route('employe.list');
@@ -59,7 +70,8 @@ class EmployeController extends Controller
     {
         $employe = Employe::findOrFail($id);
         $employe->delete();
-        return response()->json('Employe deleted successfully');
+        $employes = Employe::all();
+        return view('Employe\liste')->with('employes', $employes);
     }
 
 
